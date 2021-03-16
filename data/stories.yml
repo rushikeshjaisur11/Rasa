@@ -1,0 +1,45 @@
+version: "2.0"
+
+stories:
+
+- story: happy path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_great
+  - action: utter_happy
+
+- story: sad path 1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: affirm
+  - action: utter_happy
+
+- story: sad path 2
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: mood_unhappy
+  - action: utter_cheer_up
+  - action: utter_did_that_help
+  - intent: deny
+  - action: utter_goodbye
+
+- story: add nums
+  steps:
+  - intent: add_nums
+  - action: action_add_nums
+  
+- story: multiply nums
+  steps:
+  - intent: multiply_nums
+  - action: action_multiply_nums
+ 
+- story: Corona Status
+  steps:
+  - intent: get_covid_stats
+  - action: action_get_covid
